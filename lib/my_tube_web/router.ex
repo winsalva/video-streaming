@@ -13,11 +13,39 @@ defmodule MyTubeWeb.Router do
     plug :accepts, ["json"]
   end
 
+
+
   scope "/", MyTubeWeb do
-    pipe_through :browser
+    pipe_through [:browser, :authenticate_user]
 
     get "/", PageController, :index
+
+    resources "/users", UserController, only: [
+      :new, :create, :show, :edit, :update, :delete
+    ]
+
+    get "/login", SessionController, :login
+    post "/login", SessionController, :create
+    delete "/logout", SessionController, :logout
+
+    resources "/uploads", UploadController,
+    only: [:new, :create, :show] do
+      resources "/comments", CommentController,
+      only: [:create]
+    end
   end
+
+
+  ## authenticate user
+  defp authenticate_user(conn, _params) do
+
+    user =
+    case get_session(conn, :user_id) do
+      nil -> nil
+    end
+  end
+
+
 
   # Other scopes may use custom stacks.
   # scope "/api", MyTubeWeb do
