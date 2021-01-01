@@ -24,4 +24,15 @@ defmodule MyTubeWeb.SessionController do
 	|> render(:new)
     end
   end
+
+
+  @doc """
+  Log out
+  """
+  def logout(conn, _params) do
+    conn
+    |> clear_session()
+    |> configure_session(drop: true)
+    |> redirect(to: Routes.page_path(conn, :index))
+  end
 end

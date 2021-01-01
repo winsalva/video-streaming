@@ -1,5 +1,6 @@
 <%= if @conn.assigns.current_user do %>
 <p>Logged in as: <%= link @conn.assigns.current_user.name, to: Routes.user_path(@conn, :show, @conn.assigns.current_user.id) %></p>
+<p><%= link "Log out", to: Routes.session_path(@conn, :logout), method: :delete, data: [confirm: "Are you sure to log out?"] %></p>
 <% end %>
 
 <%= if @uploads == [] do %>
