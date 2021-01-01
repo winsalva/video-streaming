@@ -24,6 +24,25 @@ defmodule MyTube.Query.User do
 
 
   @doc """
+  Edit user.
+  """
+  def edit_user(id) do
+    get_user!(id)
+    |> User.changeset()
+  end
+
+
+  @doc """
+  Update user
+  """
+  def update_user(id, params) do
+    get_user!(id)
+    |> User.changeset(params)
+    |> Repo.update()
+  end
+
+
+  @doc """
   Get user by attribute.
   """
   def get_user_by(attr) do

@@ -1,5 +1,5 @@
 <%= if @conn.assigns.current_user do %>
-<p>Logged in as: <%= @conn.assigns.current_user.name %></p>
+<p>Logged in as: <%= link @conn.assigns.current_user.name, to: Routes.user_path(@conn, :show, @conn.assigns.current_user.id) %></p>
 <% end %>
 
 <%= if @uploads == [] do %>

@@ -1,0 +1,16 @@
+<h2>Edit User info</h2>
+<%= form_for @user, Routes.user_path(@conn, :update, @user.data), fn f -> %>
+<%= if @user.action do %>
+<div class="alert alert-danger">
+  <p>Something went wrong. Please check errors below.</p>
+</div>
+<% end %>
+
+<label>Edit name</label>
+<%= text_input f, :name %>
+<%= error_tag f, :name %>
+
+<div>
+  <%= submit "Save changes" %>
+</div>
+<% end %>
