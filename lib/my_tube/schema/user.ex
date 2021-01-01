@@ -26,11 +26,31 @@ defmodule MyTube.Schema.User do
 
 
   @doc false
-  def changeset(%User{} = user, attr \\ %{}) do
+  def changeset(user, attr \\ %{}) do
     user
     |> cast(attr, @allowed_fields)
     |> validate_required(@allowed_fields)
+    |> validate_format(:email, ~r/@/)
     |> unique_constraint(:email)
   end
 
+
+  def changeset_with_password(%User{} = user, attr \\ %{}) do
+    user
+    |> cast(attr, [:password])
+    |> validate_required([:password])
+    |> validate_length(:password, min: 5)
+    |> validate_confirmation(:password, required: true)
+    |> hash_password()
+    |> changeset(attr)
+  end
+
+
+  defp hash_password(%Ecto.Changeset{changes: %{password: password}} = changeset) do
+    changeset
+    |> put_change(:hashed_password, MyTube.Password.hash(password))
+  end
+
+  defp hash_password(changeset), do: changeset
+    
 end

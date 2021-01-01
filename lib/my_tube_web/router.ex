@@ -42,7 +42,11 @@ defmodule MyTubeWeb.Router do
     user =
     case get_session(conn, :user_id) do
       nil -> nil
+      id -> MyTube.Query.User.get_user!(id)
     end
+
+    conn
+    |> assign(:current_user, user)
   end
 
 
