@@ -19,4 +19,31 @@ defmodule MyTube.Query.Upload do
 
     Repo.all(query)
   end
+
+
+  @doc """
+  New upload.
+  """
+  def new_upload do
+    %Upload{}
+    |> Upload.changeset()
+  end
+
+
+  @doc """
+  Insert new upload.
+  """
+  def insert_upload(params) do
+    %Upload{}
+    |> Upload.changeset(params)
+    |> Repo.insert()
+  end
+
+
+  @doc """
+  Get upload by id.
+  """
+  def get_upload!(id) do
+    Repo.get!(Upload, id)
+  end
 end

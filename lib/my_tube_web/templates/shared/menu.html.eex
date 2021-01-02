@@ -1,8 +1,8 @@
 <nav class="nav-container">
-  <div class="firebird">MyTube</div>
-  <div class="large-bold right">🔎</div>
+  <div class="app-name">MyTube</div>
+  <div class="search">🔎</div>
   <%= if @conn.assigns.current_user do %>
-  <div class="large-bold right">🔔</div>
+  <div class="notices">🔔</div>
   <% end %>
   <div class="main-menu" onclick="openNav()">
     Menu
@@ -11,9 +11,6 @@
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <%= if @conn.assigns.current_user do %>
-    <%= link "My Account", to: "#"%>
-    <% end %>
 
     <%= if  user = @conn.assigns.current_user do %>
     <%= if user.email == "jay@gmail.com" do %>
@@ -22,5 +19,10 @@
     <% end %>
 
     <%= link "Home", to: Routes.page_path(@conn, :index), class: "a" %>
-    <%= link "Log in", to: Routes.session_path(@conn, :login) %>
+    <%= if @conn.assigns.current_user do %>
+    <%= link @conn.assigns.current_user.name, to: Routes.user_path(@conn, :show, @conn.assigns.current_user.id), class: "a" %>
+    <%= link "Log out", to: Routes.session_path(@conn, :logout), class: "a", method: :delete, data: [confirm: "Are you sure to log out?"] %>
+    <% else %>
+    <%= link "Log in", to: Routes.session_path(@conn, :login), class: "a" %>
+    <% end %>
 </div>

@@ -16,7 +16,6 @@ defmodule MyTubeWeb.SessionController do
       %MyTube.Schema.User{} = user ->
         conn
 	|> put_session(:user_id, user.id)
-	|> put_flash(:info, "You are now logged in")
 	|> redirect(to: "/")
       false ->
         conn

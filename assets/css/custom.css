@@ -1,3 +1,30 @@
 .nav-container {
     display: flex;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
+
+.app-name {
+    flex: 1;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.search {
+    flex: 1;
+    text-align: right;
+}
+
+.notices {
+    flex: 1;
+    text-align: right;
+}
+
+.main-menu {
+    flex: 1;
+    font-size: 2rem;
+    text-align: right;
+    font-weight: bold;
+}
+

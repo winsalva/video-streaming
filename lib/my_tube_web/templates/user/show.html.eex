@@ -4,3 +4,5 @@
   <p>Email: <%= @user.email %></p>
 </div>
 <%= link "Edit info", to: Routes.user_path(@conn, :edit, @user.id) %>
+<h2>Uploads</h2>
+<%= link "Upload a video", to: Routes.upload_path(@conn, :new) %>
