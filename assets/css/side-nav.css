@@ -1,0 +1,80 @@
+/* The side navigation menu */
+.sidenav {
+height: 100%; /* 100% Full-height */
+width: 0; /* 0 width - change this with JavaScrip\
+\
+t */
+position: fixed; /* Stay in place */
+z-index: 1; /* Stay on top */
+top: 0; /* Stay at the top */
+right: 0;
+background-color: #fff; /* saddlebrown */
+overflow-x: hidden; /* Disable horizontal scroll \
+\
+*/
+padding-top: 3rem; /* Place content 30px from the\
+\
+ top */
+transition: 0.03s; /* 0.5 second transition effec\
+\
+t to slide in the sidenav */
+}
+/* The navigation menu links */
+.sidenav .a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 1.8rem;
+background-color: #3e066f;
+color: #fff;
+display: block;
+transition: 0.15s;
+}
+/* When you mouse over the navigation links, chan\
+\
+ge their color */
+.sidenav .a:hover {
+    color: #3e066f;
+    font-weight: bold;
+    background: #fff;
+}
+
+
+/* The side navigation menu */
+.sidenav {
+height: 100%; /* 100% Full-height */
+width: 0; /* 0 width - change this with JavaScrip\
+\
+t */
+position: fixed; /* Stay in place */
+z-index: 1; /* Stay on top */
+top: 0; /* Stay at the top */
+right: 0;
+background-color: #3e066f; /* saddlebrown */
+overflow-x: hidden; /* Disable horizontal scroll \
+\
+*/
+padding-top: 3rem; /* Place content 30px from the\
+\
+ top */
+transition: 0.03s; /* 0.5 second transition effec\
+\
+t to slide in the sidenav */
+}
+/* The navigation menu links */
+.sidenav .a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 1.8rem;
+background-color: #3e066f;
+color: #fff;
+display: block;
+transition: 0.15s;
+}
+/* When you mouse over the navigation links, chan\
+\
+ge their color */
+.sidenav .a:hover {
+    color: #3e066f;
+    font-weight: bold;
+    background: #fff;
+}

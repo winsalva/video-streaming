@@ -1,0 +1,26 @@
+<nav class="nav-container">
+  <div class="firebird">MyTube</div>
+  <div class="large-bold right">🔎</div>
+  <%= if @conn.assigns.current_user do %>
+  <div class="large-bold right">🔔</div>
+  <% end %>
+  <div class="main-menu" onclick="openNav()">
+    Menu
+  </div>
+</nav>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <%= if @conn.assigns.current_user do %>
+    <%= link "My Account", to: "#"%>
+    <% end %>
+
+    <%= if  user = @conn.assigns.current_user do %>
+    <%= if user.email == "jay@gmail.com" do %>
+    <%= link "Admin Panel", to: "#" %>
+    <% end %>
+    <% end %>
+
+    <%= link "Home", to: Routes.page_path(@conn, :index), class: "a" %>
+    <%= link "Log in", to: Routes.session_path(@conn, :login) %>
+</div>

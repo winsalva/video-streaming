@@ -29,5 +29,19 @@
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= @inner_content %>
     </main>
+    <script>
+      /* Set the width of the side navigation to 250x */
+      function openNav() {
+	  document.getElementById("mySidenav").style.width = "250px";
+      }
+      /* Set the width of the side navigation to 0 */
+      function closeNav() {
+	  document.getElementById("mySidenav").style.width = "0";
+      }
+
+      function goBack() {
+	  window.history.back();
+      }
+    </script>
   </body>
 </html>
