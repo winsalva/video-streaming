@@ -12,14 +12,16 @@ defmodule MyTubeWeb.UploadController do
   end
 
 
-  def create(conn, %{"upload" => %{"title" => title, "file" => file, "description" => description} = param}) do
+  def create(conn, %{"upload" => %{"title" => title, "file" => file, "description" => description} = _params}) do
+    user_id = conn.assigns.current_user.id
+    
     params = %{
-      user_id: conn.assigns.current_user.id,
+      user_id: user_id,
       title: title,
       file: file.filename,
       description: description
     }
-    case Upload.insert_upload(params) do
+    case Upload.insert_upload(file, user_id, params) do
       {:ok, upload} ->
         conn
 	|> put_flash(:info, "Upload successfully")

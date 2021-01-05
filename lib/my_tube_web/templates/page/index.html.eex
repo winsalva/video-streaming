@@ -6,8 +6,11 @@
 </div>
 <% else %>
 <%= for upload <- @uploads do %>
-    <div>
-      <p>Title: <%= upload.title %></p>
+    <div class="video-content">
+      <p>Uploader: <%= upload.user.name %></p>
+      <b><%= upload.title %></b>
+      <video src="<%= Routes.static_path(@conn, "/uploads/#{upload.user_id}-#{upload.file}") %>" controls="controls" width="100%" height="200%">Video here</video>
+      <p><%= upload.description %></p>
     </div>
     <% end %>
     <% end %>
