@@ -53,7 +53,7 @@ background-color: #3e066f; /* saddlebrown */
 overflow-x: hidden; /* Disable horizontal scroll \
 \
 */
-padding-top: 3rem; /* Place content 30px from the\
+padding-top: 4rem; /* Place content 30px from the\
 \
  top */
 transition: 0.03s; /* 0.5 second transition effec\
@@ -64,8 +64,9 @@ t to slide in the sidenav */
 .sidenav .closebtn {
 position: absolute;
 top: 0;
+margin-top: 1rem;
 right: 2.5rem;
-font-size: 3rem;
+font-size: 3.5rem;
 margin-left: 6rem;
 background-color: #3e066f;
 color: #fff;
