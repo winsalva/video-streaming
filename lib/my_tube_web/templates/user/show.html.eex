@@ -1,3 +1,4 @@
+<div class="container-main">
 <h2>User info</h2>
 <div>
   <p>Name: <%= @user.name %></p>
@@ -6,3 +7,4 @@
 <%= link "Edit info", to: Routes.user_path(@conn, :edit, @user.id) %>
 <h2>Uploads</h2>
 <%= link "Upload a video", to: Routes.upload_path(@conn, :new) %>
+</div>

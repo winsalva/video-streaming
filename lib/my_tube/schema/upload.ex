@@ -11,6 +11,7 @@ defmodule MyTube.Schema.Upload do
 
   schema "uploads" do
     belongs_to :user, MyTube.Schema.User
+    has_many :comments, MyTube.Schema.Comment
     field :title, :string
     field :file, :string
     field :description, :string

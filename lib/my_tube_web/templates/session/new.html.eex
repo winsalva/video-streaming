@@ -7,9 +7,10 @@
 
 <label>Enter password</label>
 <%= password_input f, :password, class: "tb" %>
-
+<br>
+<br>
 <div class="submit">
-<%= submit "Log in" %>
+<%= submit "Log in", class: "btn-primary" %>
 </div>
 <% end %>
 </div>

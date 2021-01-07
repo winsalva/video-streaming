@@ -3,7 +3,7 @@ defmodule MyTubeWeb.UploadController do
 
 
 
-  alias MyTube.Query.Upload
+  alias MyTube.Query.{Upload, Comment}
 
 
   def new(conn, _params) do
@@ -43,5 +43,15 @@ defmodule MyTubeWeb.UploadController do
 	|> put_flash(:error, "There was an error uploading your video.")
 	|> redirect(to: "/")
     end
+  end
+
+
+  @doc """
+  Show an upload 
+  """
+  def show(conn, %{"id" => id}) do
+    upload = Upload.get_upload!(id)
+    comment = Comment.new_comment()
+    render(conn, :show, upload: upload, comment: comment)
   end
 end

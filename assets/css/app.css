@@ -1,6 +1,7 @@
 /* This file is for your main application css. */
 @import "./side-nav.css";
 @import "./custom.css";
+@import "./general-styling.css";
 
 /* Alerts and form errors */
 .alert {

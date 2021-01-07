@@ -16,7 +16,7 @@ defmodule MyTube.Query.Upload do
     query =
       from u in Upload,
         order_by: [desc: :updated_at],
-	preload: [:user]
+	preload: [:user, :comments]
 
     Repo.all(query)
   end
@@ -60,6 +60,11 @@ defmodule MyTube.Query.Upload do
   Get upload by id.
   """
   def get_upload!(id) do
-    Repo.get!(Upload, id)
+    query =
+      from u in Upload,
+        where: u.id == ^id,
+	preload: [:user, :comments]
+
+    Repo.one(query)
   end
 end
