@@ -2,6 +2,7 @@
 @import "./side-nav.css";
 @import "./custom.css";
 @import "./general-styling.css";
+@import "./phoenix.css";
 
 /* Alerts and form errors */
 .alert {

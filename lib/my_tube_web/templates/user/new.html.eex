@@ -1,4 +1,4 @@
-<div class="container-form">
+
 <h2>Register here</h2>
 <%= form_for @changeset, Routes.user_path(@conn, :create), [multipart: true], fn f -> %>
 <%= if @changeset.action do %>
@@ -6,24 +6,24 @@
   <p>Something went wrong! Please check errors below.</p>
 </div>
 <% end %>
-<label>Enter name</label><br>
-<%= text_input f, :name, class: "tb" %><br>
-<%= error_tag f, :name %><br>
 
-<label>Enter email</label><br>
-<%= email_input f, :email, class: "tb" %><br>
-<%= error_tag f, :email %><br>
+<label>Enter name</label>
+<%= text_input f, :name %>
+<%= error_tag f, :name %>
 
-<label>Create password</label><br>
-<%= password_input f, :password, class: "tb" %><br>
-<%= error_tag f, :password %><br>
+<label>Enter email</label>
+<%= email_input f, :email %>
+<%= error_tag f, :email %>
 
-<label>Confirm password</label><br>
-<%= password_input f, :password_confirmation, class: "tb" %><br>
-<%= error_tag f, :password_confirmation %><br>
+<label>Create password</label>
+<%= password_input f, :password %>
+<%= error_tag f, :password %>
+
+<label>Confirm password</label>
+<%= password_input f, :password_confirmation %>
+<%= error_tag f, :password_confirmation %>
 
 <div class="submit">
   <%= submit "Create account", class: "btn-primary" %>
 </div>
 <% end %>
-</div>
