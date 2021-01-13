@@ -35,3 +35,6 @@ npm-debug.log
 
 # Emacs *~ files
 *~
+
+# And secrets
+prod.secret.exs
