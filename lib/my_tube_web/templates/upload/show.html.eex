@@ -1,11 +1,8 @@
 <div class="video-content">
-  <div class="v-content">
-    <p>
-      <strong><%= @upload.title %></strong> by: <%= @upload.user.name %>
-    </p>
+  <strong><%= @upload.user.name %></strong> by: <%= @upload.title %>
     <p><%= @upload.description %></p>
-  </div>
-  <video src="<%= Routes.static_path(@conn, "/uploads/#{@upload.user_id}-#{@upload.file}") %>" controls="controls" width="100%" height="200%">Video here</video>
+  <video src="<%= Routes.static_path(@conn, "/uploads/#{@upload.user_id}-#{@upload.file}") %>" controls="controls" width="100%" height="200px">
+  </video>
   <div class="comments-container">
     <%= if @upload.comments == [] do %>
     <p>No comments yet.</p>

@@ -3,6 +3,9 @@ select {
   width: auto;
 }
 
+a {
+    text-decoration: none;
+}
 .container-main {
     margin: 1rem;
 }

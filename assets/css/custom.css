@@ -1,25 +1,31 @@
 
+body {
+    background-color: #f5f5ff;
+}
 .nav-container {
     top: 0;
     position: sticky;
     display: flex;
-    border-bottom: 1px solid #c0c0c0;
+    background-color: #f5f5ff;
+    padding-bottom: 5px;
 }
 
 .app-name {
     flex: 1;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #800080;
 }
 
 .search {
+    font-size: 1.6rem;
     flex: 1;
     text-align: right;
 }
 
 .notices {
+    font-size: 1.6rem;
     flex: 1;
     text-align: right;
 }
@@ -28,7 +34,7 @@
     flex: 1;
     text-align: right;
     padding-right: 1rem;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #808080;
 }
@@ -36,7 +42,7 @@
 .video-content {
     margin-top: 1rem;
     border-radius: 4px;
-    background-color: #f5f5ff;
+    background-color: #d6d6d6;
 }
 
 .v-content {

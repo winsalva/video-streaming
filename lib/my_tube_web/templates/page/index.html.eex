@@ -7,18 +7,15 @@
 <% else %>
 <%= for upload <- @uploads do %>
     <div class="video-content">
-      <div class="v-content">
       <p>
-	<strong><%= upload.title %></strong> by: <%= upload.user.name %>
+	<strong><%= upload.user.name %></strong>: <%= upload.title %>
       </p>
       <p><%= upload.description %></p>
-      </div>
-      <video src="<%= Routes.static_path(@conn, "/uploads/#{upload.user_id}-#{upload.file}") %>" controls="controls" width="100%" height="200%">Video here</video>
-      <div>
+	<video src="<%= Routes.static_path(@conn, "/uploads/#{upload.user_id}-#{upload.file}") %>" controls="controls" width="100%" height="200px">
+	</video>
 	<%= link "#{count(upload.comments)} Comment", to: Routes.upload_path(@conn, :show, upload.id), method: :get %>
-      </div>
-      
     </div>
+    
     <% end %>
     <% end %>
     
