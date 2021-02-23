@@ -13,6 +13,9 @@ defmodule MyTube.Query.User do
   def new_user do
     User.changeset_with_password(%User{})
   end
+
+
+  def list_users, do: Repo.all User
   
 
   @doc """

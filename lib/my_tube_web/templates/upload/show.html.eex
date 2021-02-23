@@ -1,8 +1,8 @@
 <div class="video-content">
   <strong><%= @upload.user.name %></strong> by: <%= @upload.title %>
-    <p><%= @upload.description %></p>
-  <video src="<%= Routes.static_path(@conn, "/uploads/#{@upload.user_id}-#{@upload.file}") %>" controls="controls" width="100%" height="200px">
-  </video>
+    <%= @upload.description %>
+  <iframe src="<%= Routes.static_path(@conn, "/uploads/#{@upload.user_id}-#{@upload.file}") %>" controls="controls" width="100%" height="200px">
+  </iframe>
   <div class="comments-container">
     <%= if @upload.comments == [] do %>
     <p>No comments yet.</p>

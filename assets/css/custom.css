@@ -1,31 +1,29 @@
 
-body {
-    background-color: #f5f5ff;
-}
 .nav-container {
     top: 0;
     position: sticky;
     display: flex;
-    background-color: #f5f5ff;
-    padding-bottom: 5px;
+    margin-bottom: 1rem;
+    background-color: #000000;
+    border-radius: 3px;
 }
 
 .app-name {
     flex: 1;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #800080;
+    color: orange;
 }
 
 .search {
-    font-size: 1.6rem;
+    font-size: 2rem;
     flex: 1;
     text-align: right;
 }
 
 .notices {
-    font-size: 1.6rem;
+    font-size: 2rem;
     flex: 1;
     text-align: right;
 }
@@ -34,20 +32,22 @@ body {
     flex: 1;
     text-align: right;
     padding-right: 1rem;
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #808080;
+    color: #c0c0c0;
 }
 
 .video-content {
-    margin-top: 1rem;
-    border-radius: 4px;
-    background-color: #d6d6d6;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1.5px solid #dcdcdc;
 }
 
+iframe {
+    border: none;
+}
 .v-content {
-    border: 1px solid black;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .submit {
@@ -56,25 +56,4 @@ body {
     width: 100%;
 }
 
-.btn-primary {
-    background-color:#0069d9;
-    border:0.1rem solid #0069d9;
-    border-radius:.4rem;
-    color:#fff;
-    cursor:pointer;
-    display:inline-block;
-    font-size:1.1rem;
-    font-weight:700;
-    height:3.8rem;
-    letter-spacing:.1rem;
-    line-height:3.8rem;
-    padding:0 3.0rem;
-    text-align:center;
-    text-decoration:none;
-    text-transform:uppercase;
-    white-space:nowrap;
-}
 
-.tb {
-    height: 1.5rem;
-}

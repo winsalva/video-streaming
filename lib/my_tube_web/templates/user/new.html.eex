@@ -1,5 +1,7 @@
+<div style="text-align:center;">
+  <h3><b>Register here</b></h3>
+</div>
 
-<h2>Register here</h2>
 <%= form_for @changeset, Routes.user_path(@conn, :create), [multipart: true], fn f -> %>
 <%= if @changeset.action do %>
 <div class="alert alert-danger">

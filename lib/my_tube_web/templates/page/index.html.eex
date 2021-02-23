@@ -1,4 +1,4 @@
-<%= render(MyTubeWeb.SharedView, "menu.html", conn: @conn) %>
+
 
 <%= if @uploads == [] do %>
 <div>
@@ -7,12 +7,12 @@
 <% else %>
 <%= for upload <- @uploads do %>
     <div class="video-content">
-      <p>
+      
 	<strong><%= upload.user.name %></strong>: <%= upload.title %>
-      </p>
-      <p><%= upload.description %></p>
-	<video src="<%= Routes.static_path(@conn, "/uploads/#{upload.user_id}-#{upload.file}") %>" controls="controls" width="100%" height="200px">
-	</video>
+      
+      <%= upload.description %>
+	<iframe src="<%= Routes.static_path(@conn, "/uploads/#{upload.user_id}-#{upload.file}") %>" controls="controls" width="100%" height="200px">
+	</iframe>
 	<%= link "#{count(upload.comments)} Comment", to: Routes.upload_path(@conn, :show, upload.id), method: :get %>
     </div>
     
