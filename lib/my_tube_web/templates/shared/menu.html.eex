@@ -9,12 +9,6 @@
     <span class="icon"></span>
     <span class="icon"></span>
   </div>
-  <!--
-  <div class="main-menu" onclick="openNav()">
-    Menu
-  </div>
-  -->
-  
 </nav>
 
 <div id="mySidenav" class="sidenav">
