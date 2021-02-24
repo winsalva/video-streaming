@@ -4,9 +4,17 @@
   <%= if @conn.assigns.current_user do %>
   <div class="notices">🔔</div>
   <% end %>
+  <div class="menu-icon" onclick="openNav()">
+    <span class="icon"></span>
+    <span class="icon"></span>
+    <span class="icon"></span>
+  </div>
+  <!--
   <div class="main-menu" onclick="openNav()">
     Menu
   </div>
+  -->
+  
 </nav>
 
 <div id="mySidenav" class="sidenav">
