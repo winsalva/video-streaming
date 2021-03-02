@@ -1,21 +1,25 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
 
 .nav-container {
     top: 0;
     position: sticky;
     display: flex;
     margin-bottom: 1rem;
-    background-color: #000000;
+    background-color: #dcdcdc;
     border-radius: 3px;
 }
 
 .app-name {
+    text-align: left;
     flex: 1;
-    text-align: center;
+    padding-left: 1rem;
     font-size: 2rem;
     font-weight: bold;
-    color: orange;
+    color: #800080;
 }
-
 
 .menu-icon {
     width: 50px;
@@ -33,7 +37,7 @@
     background: #fff;
 }
 
-.icon:hover {
+.menu-icon:hover ~ .icon {
     background-color: #000000;
 }
 
@@ -77,4 +81,17 @@ iframe {
     width: 100%;
 }
 
+.tb {
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.4rem;
+}
 

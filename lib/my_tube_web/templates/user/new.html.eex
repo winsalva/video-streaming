@@ -10,19 +10,19 @@
 <% end %>
 
 <label>Enter name</label>
-<%= text_input f, :name %>
+<%= text_input f, :name, class: "tb" %>
 <%= error_tag f, :name %>
 
 <label>Enter email</label>
-<%= email_input f, :email %>
+<%= email_input f, :email, class: "tb" %>
 <%= error_tag f, :email %>
 
 <label>Create password</label>
-<%= password_input f, :password %>
+<%= password_input f, :password, class: "tb" %>
 <%= error_tag f, :password %>
 
 <label>Confirm password</label>
-<%= password_input f, :password_confirmation %>
+<%= password_input f, :password_confirmation, class: "tb" %>
 <%= error_tag f, :password_confirmation %>
 
 <div class="submit">

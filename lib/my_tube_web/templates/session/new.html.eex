@@ -2,13 +2,19 @@
   <h3><b>Login here</b></h3>
 </div>
 
+<%= if get_flash(@conn, :error) do %>
+<p class="alert alert-danger" role="alert">
+  <%= get_flash(@conn, :error) %>
+</p>
+<% end %>
+
 <%= form_for @conn, Routes.session_path(@conn, :create), fn f -> %>
 
 <label>Enter email</label>
-<%= email_input f, :email %>
+<%= email_input f, :email, class: "tb" %>
 
 <label>Enter password</label>
-<%= password_input f, :password %>
+<%= password_input f, :password, class: "tb" %>
 
 <div class="submit">
 <%= submit "Log in", class: "btn-primary" %>
