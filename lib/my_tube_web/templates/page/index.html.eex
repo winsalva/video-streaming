@@ -1,6 +1,8 @@
+<%= render(MyTubeWeb.SharedView, "menu.html",conn: @conn) %>
 
+<div class="container">
 
-<%= if @uploads == [] do %>
+  <%= if @uploads == [] do %>
 <div>
   <p>No available uploads yet.</p>
 </div>
@@ -19,3 +21,4 @@
     <% end %>
     <% end %>
     
+</div>

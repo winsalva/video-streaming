@@ -1,3 +1,4 @@
+<div class="container">
 <div style="text-align: center;">
   <h3><b>Login here</b></h3>
 </div>
@@ -11,14 +12,15 @@
 <%= form_for @conn, Routes.session_path(@conn, :create), fn f -> %>
 
 <label>Enter email</label>
-<%= email_input f, :email, class: "tb" %>
+<%= email_input f, :email %>
 
 <label>Enter password</label>
-<%= password_input f, :password, class: "tb" %>
+<%= password_input f, :password %>
 
 <div class="submit">
-<%= submit "Log in", class: "btn-primary" %>
+<%= submit "Log in" %>
 </div>
 
 <% end %>
 
+</div>

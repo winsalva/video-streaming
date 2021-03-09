@@ -1,15 +1,7 @@
 /* General style */
 
-html {
-    font-size: 62.5%;
-}
-
 body {
-    font-family: Arial, Verdana, sans-serif;
-}
-
-select {
-  width: auto;
+    margin: 0;
 }
 
 a {
@@ -22,36 +14,4 @@ a {
 footer {
     bottom: 0;
     position: fixed;
-}
-
-.button,button,input[type='button'],input[type='reset'],input[type='submit']{
-    background-color:#0069d9;
-    border:0.1rem solid #0069d9;
-    border-radius:.4rem;
-    color:#fff;
-    cursor:pointer;
-    display:inline-block;
-    font-size:1.1rem;
-    font-weight:700;
-    height:3.8rem;
-    letter-spacing:.1rem;
-    line-height:3.8rem;
-    padding:0 3.0rem;
-    text-align:center;
-    text-decoration:none;
-    text-transform:uppercase;
-    white-space:nowrap;
-   }
-
-@media (min-width: 40.0rem) { /* Small devices (landscape phones, 576px and up) */
-  header section {
-    flex-direction: row;
-  }
-  header nav ul {
-    margin: 1rem;
-  }
-  .phx-logo {
-    flex-basis: 527px;
-    margin: 2rem 1rem;
-  }
 }

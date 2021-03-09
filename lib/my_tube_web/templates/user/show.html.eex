@@ -1,5 +1,8 @@
-<div class="container-main">
-<h2>User info</h2>
+
+<%= render(MyTubeWeb.SharedView, "menu.html",conn: @conn) %>
+
+  <div class="container">
+<h3>User info</h3>
 <div>
   <p>Name: <%= @user.name %></p>
   <p>Email: <%= @user.email %></p>

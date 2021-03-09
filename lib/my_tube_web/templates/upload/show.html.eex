@@ -1,8 +1,14 @@
-<div class="video-content">
-  <strong><%= @upload.user.name %></strong> by: <%= @upload.title %>
+<%= render(MyTubeWeb.SharedView, "menu.html",conn: @conn) %>
+
+<div class="container">
+  <div class="video-content">
+    <strong><%= @upload.user.name %></strong> by
+    <%= @upload.title %>
     <%= @upload.description %>
-  <iframe src="<%= Routes.static_path(@conn, "/uploads/#{@upload.user_id}-#{@upload.file}") %>" controls="controls" width="100%" height="200px">
-  </iframe>
+    <iframe src="<%= Routes.static_path(@conn, "/uploads/#{@upload.user_id}-#{@upload.file}") %>" controls="controls" width="100%" height="180px">
+    </iframe>
+  </div>
+
   <div class="comments-container">
     <%= if @upload.comments == [] do %>
     <p>No comments yet.</p>
@@ -12,10 +18,18 @@
 	<% end %>
 	<% end %>
   </div>
+
+
+<div class="footer">
+  <div class="footer-tb">
+    <%= form_for @comment, Routes.upload_comment_path(@conn, :create, @upload.id), fn f -> %>
+  
+      <%= text_input f, :content %>
+    </div>
+    <div class="footer-btn">
+     
+      <%= submit "Send" %>
+    </div>
+    <% end %>
+  </div>
 </div>
-<footer>
-  <%= form_for @comment, Routes.upload_comment_path(@conn, :create, @upload.id), fn f -> %>
-  <%= text_input f, :content %>
-  <%= submit "Send" %>
-  <% end %>
-</footer>

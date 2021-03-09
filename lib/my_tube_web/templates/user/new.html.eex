@@ -1,3 +1,4 @@
+<div class="container">
 <div style="text-align:center;">
   <h3><b>Register here</b></h3>
 </div>
@@ -10,22 +11,23 @@
 <% end %>
 
 <label>Enter name</label>
-<%= text_input f, :name, class: "tb" %>
+<%= text_input f, :name %>
 <%= error_tag f, :name %>
 
 <label>Enter email</label>
-<%= email_input f, :email, class: "tb" %>
+<%= email_input f, :email %>
 <%= error_tag f, :email %>
 
 <label>Create password</label>
-<%= password_input f, :password, class: "tb" %>
+<%= password_input f, :password, placeholder: "Atleast 5 characters.." %>
 <%= error_tag f, :password %>
 
 <label>Confirm password</label>
-<%= password_input f, :password_confirmation, class: "tb" %>
+<%= password_input f, :password_confirmation, placeholder: "Re-type your password.." %>
 <%= error_tag f, :password_confirmation %>
 
 <div class="submit">
   <%= submit "Create account", class: "btn-primary" %>
 </div>
 <% end %>
+</div>

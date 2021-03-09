@@ -1,5 +1,5 @@
-<div class="container-main">
-<h2>Upload Video</h2>
+<div class="container">
+<h3>Upload Video</h3>
 <%= form_for @changeset, Routes.upload_path(@conn, :create), [multipart: true], fn f -> %>
 <%= if @changeset.action do %>
 <div class="alert alert-danger">
@@ -7,20 +7,20 @@
 </div>
 <% end %>
 
-<label>Add video title</label><br>
-<%= text_input f, :title, class: "tb" %><br>
-<%= error_tag f, :title %><br>
+<label>Title</label>
+<%= text_input f, :title, placeholder: "Add a video title... (required)" %>
+<%= error_tag f, :title %>
 
-<label>Select video for upload</label><br>
-<%= file_input f, :file, class: "tb" %><br>
-<%= error_tag f, :file %><br>
+<label>Upload a video</label>
+<%= file_input f, :file  %>
+<%= error_tag f, :file %>
 
-<label>Description</label><br>
-<%= textarea f, :description, class: "tb" %><br>
-<%= error_tag f, :description %><br>
+<label>Description</label>
+<%= textarea f, :description, placeholder: "Add a video description...(required)" %>
+<%= error_tag f, :description %>
 
 <div class="submit">
-  <%= submit "Upload", class: "btn-primary" %>
+  <%= submit "Upload" %>
 </div>
 <% end %>
 </div>

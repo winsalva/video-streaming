@@ -25,7 +25,7 @@ padding: 8px 8px 8px 32px;
 text-decoration: none;
 font-size: 1.6rem;
 background-color: #000000;
-color: #fff;
+color: #ff8c00;
 display: block;
 transition: 0.5s;
 }
@@ -33,9 +33,10 @@ transition: 0.5s;
 \
 ge their color */
 .sidenav .a:hover {
-    color: #000000;
+    color: #ff8c00;
     font-weight: bold;
-    background: #f5f5ff;
+    border-top: 0.05px solid #808080;
+    border-bottom: 0.05px solid #808080;
 }
 
 
@@ -46,7 +47,7 @@ margin-top: 0.8rem;
 right: 2rem;
 font-size: 3rem;
 margin-left: 5rem;
-color: #fff;
+color: #ff8c00;
 font-weight: bold;
 }
 
