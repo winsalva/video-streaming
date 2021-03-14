@@ -7,7 +7,7 @@
   <p>Name: <%= @user.name %></p>
   <p>Email: <%= @user.email %></p>
 </div>
-<%= link "Edit info", to: Routes.user_path(@conn, :edit, @user.id) %>
+<%= link "Edit info", to: Routes.user_path(@conn, :edit, @user.id), method: :get %>
 <h2>Uploads</h2>
-<%= link "Upload a video", to: Routes.upload_path(@conn, :new) %>
+<%= link "Upload a video", to: Routes.upload_path(@conn, :new), method: :get %>
 </div>

@@ -11,7 +11,7 @@
 <%= text_input f, :title, placeholder: "Add a video title... (required)" %>
 <%= error_tag f, :title %>
 
-<label>Upload a video</label>
+<label>URL</label>
 <%= text_input f, :file  %>
 <%= error_tag f, :file %>
 
