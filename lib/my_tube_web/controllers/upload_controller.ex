@@ -2,6 +2,7 @@ defmodule MyTubeWeb.UploadController do
   use MyTubeWeb, :controller
 
 
+  plug :authenticate
 
   alias MyTube.Query.{Upload, Comment}
 
@@ -33,5 +34,17 @@ defmodule MyTubeWeb.UploadController do
     upload = Upload.get_upload!(id)
     comment = Comment.new_comment()
     render(conn, :show, upload: upload, comment: comment)
+  end
+
+
+
+  ### authenticator.
+  defp authenticate(conn, _params) do
+    with user when not is_nil(user) <- conn.assigns.current_user do
+      conn
+    else
+      nil ->
+        conn |> redirect(to: "/") |> halt()
+    end
   end
 end
