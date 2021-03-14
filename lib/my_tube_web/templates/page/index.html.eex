@@ -13,7 +13,7 @@
 	<strong><%= upload.user.name %></strong>: <%= upload.title %>
       
       <%= upload.description %>
-	<iframe src="<%= Routes.static_path(@conn, "/uploads/#{upload.user_id}-#{upload.file}") %>" controls="controls" width="100%" height="200px">
+	<iframe src="<%= upload.file %>" controls="controls" width="100%" height="200px">
 	</iframe>
 	<%= link "#{count(upload.comments)} Comment", to: Routes.upload_path(@conn, :show, upload.id), method: :get %>
     </div>

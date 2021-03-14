@@ -12,7 +12,7 @@
 <%= error_tag f, :title %>
 
 <label>Upload a video</label>
-<%= file_input f, :file  %>
+<%= text_input f, :file  %>
 <%= error_tag f, :file %>
 
 <label>Description</label>

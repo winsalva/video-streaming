@@ -32,7 +32,6 @@ defmodule MyTube.Schema.Upload do
     upload
     |> cast(attr, @allowed_fields)
     |> validate_required(@allowed_fields)
-    |> validate_format(:file, ~r/.mp4$/)
     |> assoc_constraint(:user)
   end
 end

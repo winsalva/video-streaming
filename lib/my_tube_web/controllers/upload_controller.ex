@@ -12,6 +12,9 @@ defmodule MyTubeWeb.UploadController do
   end
 
 
+  @doc """
+  Temporary disabling this part of code until such time i can make it to host file uploads. Will just embed youtube videos for now.
+
   def create(conn, %{"upload" => %{"title" => title, "file" => file, "description" => description} = _params}) do
     user_id = conn.assigns.current_user.id
     
@@ -44,7 +47,21 @@ defmodule MyTubeWeb.UploadController do
 	|> redirect(to: "/")
     end
   end
+  """
 
+
+  def create(conn, %{"upload" => %{"title" => title, "file" => file, "description" => description} = params}) do
+    params = Map.put(params, "user_id", conn.assigns.current_user.id)
+
+    case Upload.insert_upload(params) do
+      {:ok, _upload} ->
+        conn
+	|> redirect(to: "/")
+      {:error, %Ecto.Changeset{} = changeset} ->
+        conn
+        |> render(:new, changeset: changeset)
+    end
+  end
 
   @doc """
   Show an upload 
