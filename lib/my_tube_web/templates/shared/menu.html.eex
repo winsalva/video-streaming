@@ -1,9 +1,12 @@
 <nav class="nav-container">
   <div class="app-name">MyTube</div>
-  <div class="search">🔎</div>
+  <div class="nav-options">
+    <img class="icon-options" src="<%= Routes.static_path(@conn, "/images/search3.png") %>"/>
+
   <%= if @conn.assigns.current_user do %>
-  <div class="notices">🔔</div>
-  <% end %>
+    <img class="icon-options" src="<%= Routes.static_path(@conn, "/images/bell.png") %>"/>
+    <% end %>
+  </div>
   <div class="menu-icon" onclick="openNav()">
     <span class="icon"></span>
     <span class="icon"></span>
