@@ -18,8 +18,8 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
     <%= if  user = @conn.assigns.current_user do %>
-    <%= if user.email == "jay@gmail.com" do %>
-    <%= link "Admin Panel", to: "#" %>
+    <%= if user.email == "winsalva396@gmail.com" do %>
+    <%= link "Admin Panel", to: "#", class: "a" %>
     <% end %>
     <% end %>
     <%= link "Home", to: Routes.page_path(@conn, :index), class: "a" %>

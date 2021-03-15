@@ -23,14 +23,9 @@ defmodule MyTubeWeb.Endpoint do
   plug Plug.Static,
     at: "/",
     from: :my_tube,
-    gzip: false,
+    gzip: true,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
-
-  plug Plug.Static,
-    at: "/uploads",
-    from: MyTube.Uploads.upload_dir(),
-    gzip: false
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
