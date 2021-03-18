@@ -32,6 +32,9 @@ defmodule MyTube.Schema.Upload do
     upload
     |> cast(attr, @allowed_fields)
     |> validate_required(@allowed_fields)
+    |> validate_length(:title, max: 100)
+    |> validate_length(:file, max: 100)
+    |> validate_length(:description, max: 250)
     |> assoc_constraint(:user)
   end
 end

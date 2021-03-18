@@ -2,8 +2,7 @@
 
 <%= render(MyTubeWeb.SharedView, "menu.html",conn: @conn) %>
 <div class="container">
-
-  <h3>Edit User info</h3>
+  <div class="heading"><h3>Edit User info</h3></div>
 <%= form_for @user, Routes.user_path(@conn, :update, @user.data), fn f -> %>
 <%= if @user.action do %>
 <div class="alert alert-danger">

@@ -55,7 +55,6 @@ defmodule MyTubeWeb.UserController do
     case User.update_user(id, params) do
       {:ok, user} ->
         conn
-	|> put_flash(:info, "Updated successfully.")
 	|> redirect(to: Routes.user_path(conn, :show, user.id))
       {:error, %Ecto.Changeset{} = user} ->
         conn

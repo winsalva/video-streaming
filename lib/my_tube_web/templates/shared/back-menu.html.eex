@@ -1,0 +1,31 @@
+<div class="back-menu-container">
+  <div class="back-btn">
+  <a class="back-btn-icon" onclick="goBack()"><img class="icon-options" src="<%= Routes.static_path(@conn, "/images/orange-backspace.png") %>"/>
+  </a>
+  </div>
+
+  <div class="menu-icon" onclick="openNav()">
+    <span class="icon"></span>
+    <span class="icon"></span>
+    <span class="icon"></span>
+  </div>
+</div>
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <%= if  user = @conn.assigns.current_user do %>
+    <%= if user.email == "winsalva396@gmail.com" do %>
+    <%= link "Admin Panel", to: "#", class: "a" %>
+    <% end %>
+    <% end %>
+    <%= link "Home", to: Routes.page_path(@conn, :index), class: "a" %>
+    <%= if @conn.assigns.current_user do %>
+    <%= link @conn.assigns.current_user.name, to: Routes.user_path(@conn, :show, @conn.assigns.current_user.id), class: "a" %>
+    <%= link "Log out", to: Routes.session_path(@conn, :logout), class: "a", method: :delete, data: [confirm: "Are you sure to log out?"] %>
+    <% else %>
+    <%= link "Sign up", to: Routes.user_path(@conn, :new), class: "a" %>
+    <%= link "Log in", to: Routes.session_path(@conn, :login), class: "a" %>
+    <% end %>
+</div>

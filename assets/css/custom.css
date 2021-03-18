@@ -1,8 +1,24 @@
+.back-menu-container {
+    top: 0;
+    position: sticky;
+    display: flex;
+    padding-top: 0.5rem;
+    background-color: #000000;
+}
+
+.back-btn {
+    flex: 1;
+}
+
+.back-btn-icon {
+    margin-left: 0.8rem;
+}
 
 .container {
   margin: 0 auto;
   max-width: 80.0rem;
-  padding: 0 1.0rem;
+  padding-top: 0.5rem;
+  padding: 0 0.5rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -15,6 +31,8 @@ form {
 .nav-container {
     top: 0;
     position: sticky;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     display: flex;
     margin-bottom: 1rem;
     background-color: #000000;
@@ -27,7 +45,7 @@ form {
     padding-left: 1rem;
     font-size: 2rem;
     font-weight: bold;
-    color: #ff8c00;
+    color: #ff7100;
 }
 
 .nav-options {
@@ -53,7 +71,7 @@ form {
     width: 28px;
     height: 0.3rem;
     margin: 1.8px;
-    background: #ff8c00;
+    background: #ff7100;
 }
 
 .menu-icon:hover ~ .icon {
@@ -117,19 +135,58 @@ p {
 
 .footer {
     bottom: 0;
+    height: 4rem;
+    position: fixed;
     width: 100%;
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+    border: 1px solid #ff7100;
 }
 
 .footer-tb {
     flex: 1;
     border: 1px solid black;
+    background-color: #eeeeee;
 }
 
 .footer-btn {
     text-align: right;
    
     border: 1px solid black;
+}
+
+.comments-container {
+    margin-bottom: 5.5rem;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #ff7100;
+}
+
+.name-description-container {
+    font-size: 1.8rem;   
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: bold;
+}
+
+.upload-description {
+    min-height: 1.5rem;
+    max-height: 5.5rem;
+    overflow: hidden;
+    
+}
+
+.upload-description:hover {
+    max-height: none;
+}
+
+.u-name {
+    color: #ff7100;
 }

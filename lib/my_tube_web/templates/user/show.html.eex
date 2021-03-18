@@ -2,12 +2,11 @@
 <%= render(MyTubeWeb.SharedView, "menu.html",conn: @conn) %>
 
   <div class="container">
-<h3>User info</h3>
 <div>
-  <p>Name: <%= @user.name %></p>
-  <p>Email: <%= @user.email %></p>
+  <p><b>Welcome back  <%= link @user.name, to: Routes.user_path(@conn, :edit, @user.id), method: :get %>!</b></p>
 </div>
-<%= link "Edit info", to: Routes.user_path(@conn, :edit, @user.id), method: :get %>
-<h2>Uploads</h2>
-<%= link "Upload a video", to: Routes.upload_path(@conn, :new), method: :get %>
+
+<div class="heading">
+  <%= link "Upload a video", to: Routes.upload_path(@conn, :new), method: :get %>
+</div>
 </div>

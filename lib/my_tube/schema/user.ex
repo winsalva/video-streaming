@@ -30,6 +30,8 @@ defmodule MyTube.Schema.User do
     user
     |> cast(attr, @allowed_fields)
     |> validate_required(@allowed_fields)
+    |> validate_length(:name, min: 3, max: 50)
+    |> validate_length(:email, max: 50)
     |> validate_format(:email, ~r/@/)
     |> unique_constraint(:email)
   end
@@ -39,7 +41,7 @@ defmodule MyTube.Schema.User do
     user
     |> cast(attr, [:password])
     |> validate_required([:password])
-    |> validate_length(:password, min: 5)
+    |> validate_length(:password, min: 5, max: 20)
     |> validate_confirmation(:password, required: true)
     |> hash_password()
     |> changeset(attr)
