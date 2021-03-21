@@ -1,3 +1,15 @@
+
+.heading {
+    text-align: center;
+    color: #ff7100;
+    font-weigth: bold;
+    font-size: 2rem;
+}
+
+body {
+    background-color: #000000;
+}
+
 .back-menu-container {
     top: 0;
     position: sticky;
@@ -37,6 +49,7 @@ form {
     margin-bottom: 1rem;
     background-color: #000000;
     border-radius: 2px;
+    border-bottom: 0.5px solid #808080;
 }
 
 .app-name {
@@ -111,9 +124,19 @@ form {
 }
 
 .video-content {
-    background-color: #f5f5f5;
+    border: 0.1px solid #808080;
     margin-top: 1rem;
     border-radius: 2px;
+    background-color: #020e02;
+}
+
+.comment {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.post-comment {
+    color: #808080;
 }
 
 iframe {
@@ -141,6 +164,7 @@ label {
 
 p {
     font-size: 1.4rem;
+    color: #fff;
 }
 
 .footer {
@@ -186,6 +210,7 @@ p {
 
 .author-name {
     font-weight: bold;
+    color: #fff;
 }
 
 .upload-description {
@@ -194,6 +219,7 @@ p {
     overflow: hidden;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    color: #fff;
 }
 
 .upload-description:hover {
@@ -201,5 +227,5 @@ p {
 }
 
 .u-name {
-    color: #000000;
+    color: #5bb;
 }

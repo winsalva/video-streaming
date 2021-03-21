@@ -11,7 +11,7 @@
     <div class="video-content">
       <div class="name-description-container">
 	<div class="author-name">
-	  <span class="u-name"><%= upload.user.name %></span>: <%= upload.title %>
+	  <span class="u-name"><%= upload.user.name %></span> - <%= upload.title %>
 	</div>
 	<div class="upload-description">
 	  <%= upload.description %>
@@ -20,7 +20,10 @@
       
 	<iframe src="<%= url(upload.file) %>" controls="controls" width="100%" height="200px">
 	</iframe>
-	<%= link "#{count(upload.comments)} Comment", to: Routes.upload_path(@conn, :show, upload.id), method: :get %>
+	<div class="comment">
+	  <%= link "#{count(upload.comments)} Comment", to: Routes.upload_path(@conn, :show, upload.id), method: :get, class: "post-comment" %>
+	</div>
+	
     </div>
     
     <% end %>

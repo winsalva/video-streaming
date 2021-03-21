@@ -1,6 +1,5 @@
 <div class="container">
-<div style="text-align:center;">
-  <h3><b>Register here</b></h3>
+<div class="heading">Register here
 </div>
 
 <%= form_for @changeset, Routes.user_path(@conn, :create), [multipart: true], fn f -> %>

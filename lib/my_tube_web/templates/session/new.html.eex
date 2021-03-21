@@ -1,6 +1,5 @@
 <div class="container">
-<div style="text-align: center;">
-  <h3><b>Login here</b></h3>
+<div class="heading">Login here
 </div>
 
 <%= if get_flash(@conn, :error) do %>
