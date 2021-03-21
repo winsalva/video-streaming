@@ -2,7 +2,7 @@ defmodule MyTubeWeb.UploadController do
   use MyTubeWeb, :controller
 
 
-  plug :authenticate
+  plug :authenticate when action not in [:show]
 
   alias MyTube.Query.{Upload, Comment}
 

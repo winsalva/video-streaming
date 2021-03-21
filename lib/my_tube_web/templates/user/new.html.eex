@@ -10,11 +10,11 @@
 <% end %>
 
 <label>Enter name</label>
-<%= text_input f, :name %>
+<%= text_input f, :name, placeholder: "Enter your name.." %>
 <%= error_tag f, :name %>
 
 <label>Enter email</label>
-<%= email_input f, :email %>
+<%= email_input f, :email, placeholder: "Enter your email.." %>
 <%= error_tag f, :email %>
 
 <label>Create password</label>

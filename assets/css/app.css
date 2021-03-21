@@ -3,6 +3,8 @@
 @import "./custom.css";
 @import "./general-styling.css";
 @import "./phoenix.css";
+@import "./upload.css";
+
 
 /* Alerts and form errors */
 .alert {

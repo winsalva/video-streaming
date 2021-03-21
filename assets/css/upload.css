@@ -1,0 +1,13 @@
+.no-comment {
+    color: #fff;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.comment-content {
+    background-color: #f6f6f6;
+    border-radius: 2px;
+    color: #000000;
+    width: 100%;
+    padding: 0.4rem;
+}

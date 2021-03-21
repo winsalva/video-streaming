@@ -5,7 +5,7 @@ defmodule MyTube.Query.Upload do
 
 
   alias MyTube.{Repo}
-  alias MyTube.Schema.Upload
+  alias MyTube.Schema.{Upload, Comment}
   import Ecto.Query
   
 
@@ -45,10 +45,14 @@ defmodule MyTube.Query.Upload do
   Get upload by id.
   """
   def get_upload!(id) do
+    comments =
+      from c in Comment,
+        order_by: [desc: :updated_at]
+	 
     query =
       from u in Upload,
         where: u.id == ^id,
-	preload: [:user, :comments]
+	preload: [:user, comments: ^comments]
 
     Repo.one(query)
   end

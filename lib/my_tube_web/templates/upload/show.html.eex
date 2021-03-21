@@ -14,30 +14,26 @@
         <iframe src="<%= url(@upload.file) %>" controls="controls" width="100%" height="200px">
         </iframe>
     </div>
-    
-        
 
+    <%= if @conn.assigns.current_user do %>
+    <%= form_for @comment, Routes.upload_comment_path(@conn, :create, @upload.id), fn f -> %>
+    <div class="footer">
+      <%= text_input f, :content, placeholder: "Write a comment..", class: "footer-tb" %>
+     <%= submit "Send", class: "footer-btn" %>
+     <% end %>
+  </div>
+    <% end %>
+
+    
   <div class="comments-container">
     <%= if @upload.comments == [] do %>
-    <p>No comments yet.</p>
+    <p class="no-comment">Be the first to comment.</p>
     <% else %>
     <%= for comment <- @upload.comments do %>
-	<p><%= comment.content %></p>
+	<p class="comment-content">
+	  <%= comment.content %>
+	</p>
 	<% end %>
 	<% end %>
   </div>
 </div>
-
-<div class="footer">
-  <div class="footer-tb">
-    <%= form_for @comment, Routes.upload_comment_path(@conn, :create, @upload.id), fn f -> %>
-  
-      <%= text_input f, :content %>
-    </div>
-    <div class="footer-btn">
-     
-      <%= submit "Send" %>
-    </div>
-    <% end %>
-  </div>
-
