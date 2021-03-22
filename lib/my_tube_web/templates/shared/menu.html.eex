@@ -4,7 +4,8 @@
   </div>
   <div class="app-name">MyTube</div>
   <div class="nav-options">
-    <img class="icon-options" src="<%= Routes.static_path(@conn, "/images/search3.png") %>"/>
+    <a href="<%= Routes.search_path(@conn, :index) %>">
+      <img class="icon-options" src="<%= Routes.static_path(@conn, "/images/search3.png") %>"/></a>
 
   <%= if @conn.assigns.current_user do %>
     <img class="icon-options" src="<%= Routes.static_path(@conn, "/images/bell.png") %>"/>
