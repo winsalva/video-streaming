@@ -4,7 +4,7 @@
     <div class="video-content">
       <div class="name-description-container">
         <div class="author-name">
-          <span class="u-name"><%= @upload.user.name %></span>: <%= @upload.title %>
+          <span class="u-name"><%= @upload.user.name %></span> - <%= @upload.title %>
         </div>
         <div class="upload-description">
           <%= @upload.description %>

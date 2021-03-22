@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="heading">MyTube</div>
+  
+<%= form_for @conn, Routes.search_path(@conn, :search), fn f -> %>
+
+
+<%= search_input f, :query, placeholder: "Search for title.." %>
+
+<div class="submit">
+  <%= submit "Search" %>
+</div>
+
+<% end %>
+
+
+<div>
+  <%= case @query do %>
+  <% nil -> %>
+  <p></p>
+  <% [] -> %>
+  <p>No results found for: <%= @query_string %></p>
+
+  <% query -> %>
+  <%= for q <- query do %>
+      <div class="title-search-container">
+
+        <%= link q.title, to: Routes.upload_path(@conn, :show, q.id), method: :get, class: "title-search" %>
+      </div>
+      
+      <% end %>
+      <% end %>
+</div>
+</div>

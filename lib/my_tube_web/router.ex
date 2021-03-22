@@ -28,6 +28,9 @@ defmodule MyTubeWeb.Router do
     post "/login", SessionController, :create
     delete "/logout", SessionController, :logout
 
+    get "/search", SearchController, :index
+    post "/search", SearchController, :search
+
     resources "/uploads", UploadController,
     only: [:new, :create, :show] do
       resources "/comments", CommentController,

@@ -1,0 +1,9 @@
+.title-search {
+    padding-left: 1rem;
+    font-size: 1.6rem;
+}
+
+.title-search-container {
+    margin-bottom: 1rem;
+    border-bottom: 0.2px solid #808080;
+}
