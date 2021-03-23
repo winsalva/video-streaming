@@ -47,7 +47,8 @@ defmodule MyTube.Query.Upload do
   def get_upload!(id) do
     comments =
       from c in Comment,
-        order_by: [desc: :updated_at]
+        order_by: [desc: :updated_at],
+	preload: [:user]
 	 
     query =
       from u in Upload,

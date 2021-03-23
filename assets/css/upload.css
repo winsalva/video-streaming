@@ -9,5 +9,11 @@
     border-radius: 2px;
     color: #000000;
     width: 100%;
-    padding: 0.4rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+}
+
+.commentor-name {
+    color: #5bb;
+    font-weight: bold;
 }

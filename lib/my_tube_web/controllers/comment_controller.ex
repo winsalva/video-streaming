@@ -5,6 +5,7 @@ defmodule MyTubeWeb.CommentController do
 
 
   def create(conn, %{"comment" => %{"content" => content} = params, "upload_id" => upload_id}) do
+    params = Map.put(params, "user_id", conn.assigns.current_user.id)
     case Comment.insert_comment(upload_id, params) do
       {:ok, comment} ->
         conn

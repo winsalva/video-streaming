@@ -13,6 +13,10 @@
 
         <iframe src="<%= url(@upload.file) %>" controls="controls" width="100%" height="200px">
         </iframe>
+
+	<div class="comment">
+          <%= link "#{count(@upload.comments)} Comment", to: "#", class: "post-comment" %>
+        </div>
     </div>
 
     <%= if @conn.assigns.current_user do %>
@@ -30,9 +34,16 @@
     <p class="no-comment">Be the first to comment.</p>
     <% else %>
     <%= for comment <- @upload.comments do %>
-	<p class="comment-content">
+	<div class="comment-content">
+	  <%= if comment.user do %>
+	  <span class="commentor-name"><%= comment.user.name %> -
+	  </span>
 	  <%= comment.content %>
-	</p>
+	  <% else %>
+	  <span class="commentor-name">Anon -</span>
+	  <%= comment.content %>
+	  <% end %>
+	</div>
 	<% end %>
 	<% end %>
   </div>
