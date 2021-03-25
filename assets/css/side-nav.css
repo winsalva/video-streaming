@@ -9,7 +9,7 @@ position: fixed; /* Stay in place */
 z-index: 1; /* Stay on top */
 top: 0; /* Stay at the top */
 right: 0;
-background-color: #20232c; /* saddlebrown */
+background-color: #21242d; /* saddlebrown */
 overflow-x: hidden; /* Disable horizontal scroll \
 \
 */
@@ -24,8 +24,9 @@ t to slide in the sidenav */
 .sidenav .a {
 padding: 8px 8px 8px 32px;
 text-decoration: none;
-font-size: 1.6rem;
-background-color: #20232c;
+font-size: 1.7rem;
+font-weight: 450;
+background-color: #21242d;
 color: #ff7100;
 display: block;
 transition: 0.5s;
@@ -35,9 +36,7 @@ transition: 0.5s;
 ge their color */
 .sidenav .a:hover {
     color: #ff7100;
-    font-weight: bold;
-    border-top: 0.05px solid #808080;
-    border-bottom: 0.05px solid #808080;
+    background-color: #373d4b;
 }
 
 
