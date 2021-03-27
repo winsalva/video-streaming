@@ -4,7 +4,7 @@
     <div class="video-content">
       <div class="name-description-container">
         <div class="author-name">
-          <span class="u-name"><%= @upload.user.name %></span> - <%= @upload.title %>
+          <span class="commentor-name"><%= @upload.user.name %></span> <%= @upload.title %>
         </div>
         <div class="upload-description">
           <%= @upload.description %>
@@ -30,17 +30,17 @@
 
     
   <div class="comments-container">
-    <%= if @upload.comments == [] do %>
+    <%= if @upload.comments == [] and @conn.assigns.current_user do %>
     <p class="no-comment">Be the first to comment.</p>
     <% else %>
     <%= for comment <- @upload.comments do %>
 	<div class="comment-content">
 	  <%= if comment.user do %>
-	  <span class="commentor-name"><%= comment.user.name %> -
+	  <span class="commentor-name"><%= comment.user.name %>  
 	  </span>
 	  <%= comment.content %>
 	  <% else %>
-	  <span class="commentor-name">Anon -</span>
+	  <span class="commentor-name">Anon</span>
 	  <%= comment.content %>
 	  <% end %>
 	</div>

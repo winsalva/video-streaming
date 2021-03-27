@@ -11,7 +11,7 @@
     <div class="video-content">
       <div class="name-description-container">
 	<div class="author-name">
-	  <span class="u-name"><%= upload.user.name %></span> - <%= upload.title %>
+	  <span class="u-name"><%= upload.user.name %></span> - <span class="upload-title"><%= upload.title %></span>
 	</div>
 	<div class="upload-description">
 	  <%= upload.description %>

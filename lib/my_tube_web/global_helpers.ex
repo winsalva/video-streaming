@@ -14,4 +14,10 @@ defmodule MyTubeWeb.GlobalHelpers do
 
     yt_link <> video_id
   end
+
+
+  # take the first character from a user's name
+  def avatar_name(user_name) do
+    String.first(user_name)
+  end
 end
