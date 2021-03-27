@@ -6,7 +6,7 @@
 <%= form_for @user, Routes.user_path(@conn, :update, @user.data), fn f -> %>
 <%= if @user.action do %>
 <div class="alert alert-danger">
-  <p>Something went wrong. Please check errors below.</p>
+  <p class="alert-danger">Something went wrong. Please check errors below.</p>
 </div>
 <% end %>
 

@@ -6,6 +6,13 @@
     font-size: 2rem;
 }
 
+.upload-link {
+    background-color: #373d4b;
+    padding: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid #373d4b;
+}
+
 body {
     background-color: #21242d;
 }
@@ -221,7 +228,7 @@ p {
 
 .upload-title {
     font-weight: 450;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #ddd;
 }
 .upload-description:hover {
