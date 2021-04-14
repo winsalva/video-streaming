@@ -26,6 +26,12 @@ defmodule MyTubeWeb.Endpoint do
     gzip: true,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
+  plug Plug.Static,
+    at: "/light",
+    from: :my_tube,
+    gzip: true,
+    only: ~w(css fonts images js favicon.ico robots.txt)
+
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

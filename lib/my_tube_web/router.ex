@@ -19,6 +19,7 @@ defmodule MyTubeWeb.Router do
     pipe_through [:browser, :authenticate_user]
 
     get "/", PageController, :index
+    get "/test", PageController, :test
 
     resources "/users", UserController, only: [
       :new, :create, :show, :edit, :update, :delete

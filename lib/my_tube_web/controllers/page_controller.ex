@@ -9,4 +9,12 @@ defmodule MyTubeWeb.PageController do
     uploads = Upload.list_uploads()
     render(conn, "index.html", uploads: uploads)
   end
+
+
+
+  def test(conn, _) do
+    conn
+    |> put_layout("light.html")
+    |> render(:test)
+  end
 end
