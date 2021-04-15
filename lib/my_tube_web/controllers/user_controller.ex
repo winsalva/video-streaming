@@ -2,7 +2,7 @@ defmodule MyTubeWeb.UserController do
   use MyTubeWeb, :controller
 
 
-  alias MyTube.Query.User
+  alias MyTube.Query.{User, Upload}
 
 
   @doc """
@@ -35,7 +35,8 @@ defmodule MyTubeWeb.UserController do
   """
   def show(conn, %{"id" => id}) do
     user = User.get_user!(id)
-    render(conn, :show, user: user)
+    user_uploads = Upload.list_user_uploads(id)
+    render(conn, :show, user: user, user_uploads: user_uploads)
   end
 
 

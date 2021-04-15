@@ -12,8 +12,6 @@
   </head>
   <body>
     <main role="main">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      
       <%= @inner_content %>
     </main>
       

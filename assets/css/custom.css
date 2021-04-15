@@ -13,8 +13,9 @@
     border: 1px solid #373d4b;
 }
 
+/* former color #21242d */
 body {
-    background-color: #21242d;
+    background-color: #000000;
 }
 
 .back-menu-container {
@@ -23,11 +24,12 @@ body {
     display: flex;
     padding-top: 0.8rem;
     background-color: #21242d;
-    border-bottom: 1px solid #373d4b;
+    border-bottom: 2px solid #373d4b;
 }
 
 .back-btn {
-    flex: 1;
+    
+ 
 }
 
 .back-btn-icon {
@@ -56,7 +58,14 @@ form {
     display: flex;
     margin-bottom: 1rem;
     background-color: #21242d;
-    border-bottom: 1px solid #373d4b;
+    border-bottom: 2px solid #373d4b;
+}
+
+.name {
+    font-size: 2rem;
+    color: #ff7100;
+    flex: 1;
+    font-weight: bold;
 }
 
 .app-name {
@@ -131,10 +140,10 @@ form {
 }
 
 .video-content {
-    border: 0.1px solid #273d4b;
+    border: 0.1px solid #373d4b;
     margin: 1.2rem 0;
     border-radius: 2px;
-    background-color: #373d4b;
+    background-color: #21242d;
 }
 
 iframe {

@@ -1,12 +1,39 @@
 
-<%= render(MyTubeWeb.SharedView, "menu.html",conn: @conn) %>
+<%= render(MyTubeWeb.SharedView, "back-menu.html",conn: @conn, name: @user.name) %>
 
-  <div class="container">
+
+<div class="container">
+  <br>
+  <div class="heading">
+    <%= link "Upload a video", to: Routes.upload_path(@conn, :new), method: :get, class: "upload-link" %>
+  </div>
+
+  <br>
+
+  <%= if @user_uploads == [] do %>
 <div>
-  <p><b>Welcome back  <%= link @user.name, to: Routes.user_path(@conn, :edit, @user.id), method: :get %>!</b></p>
+  <p>No available uploads yet.</p>
 </div>
+<% else %>
+<%= for upload <- @user_uploads do %>
+    <div class="video-content">
+      <div class="name-description-container">
+        <div class="author-name">
+          <span class="u-name"><%= upload.user.name %></span> - <span class="upload-title"><%= upload.title %></span>
+        </div>
+        <div class="upload-description">
+          <%= upload.description %>
+        </div>
+      </div>
 
-<div class="heading">
-  <%= link "Upload a video", to: Routes.upload_path(@conn, :new), method: :get, class: "upload-link" %>
-</div>
+        <iframe src="<%= url(upload.file) %>" controls="controls">
+        </iframe>
+        <div class="comment">
+          <%= link "#{count(upload.comments)} Comment", to: Routes.upload_path(@conn, :show, upload.id), method: :get, class: "post-comment" %>
+        </div>
+
+    </div>
+
+    <% end %>
+    <% end %>
 </div>

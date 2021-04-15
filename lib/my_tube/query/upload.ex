@@ -23,6 +23,20 @@ defmodule MyTube.Query.Upload do
 
 
   @doc """
+  List user uploads
+  """
+  def list_user_uploads(user_id) do
+    query =
+      from u in Upload,
+        where: u.user_id == ^user_id,
+	order_by: [desc: :updated_at],
+	preload: [:user, :comments]
+
+    Repo.all(query)
+  end
+  
+
+  @doc """
   New upload.
   """
   def new_upload do

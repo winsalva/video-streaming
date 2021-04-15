@@ -4,6 +4,10 @@
   </a>
   </div>
 
+  <div class="name">
+    <%= @name %>
+  </div>
+
   <div class="menu-icon" onclick="openNav()">
     <span class="icon"></span>
     <span class="icon"></span>

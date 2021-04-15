@@ -2,6 +2,10 @@
 
 <div class="container">
 
+  <%= if get_flash(@conn, :info) do %>
+  <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+  <% end %>
+
   <%= if @uploads == [] do %>
 <div>
   <p>No available uploads yet.</p>

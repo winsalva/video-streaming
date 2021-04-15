@@ -31,8 +31,8 @@ defmodule MyTube.Schema.User do
     |> cast(attr, @allowed_fields)
     |> validate_required(@allowed_fields)
     |> validate_length(:name, min: 3, max: 50)
+    |> validate_format(:email, ~r/@/, message: "has invalid format")
     |> validate_length(:email, max: 50)
-    |> validate_format(:email, ~r/@/)
     |> unique_constraint(:email)
   end
 
