@@ -9,6 +9,9 @@ defmodule MyTube.Query.Comment do
   import Ecto.Query, warn: false
 
 
+  @doc """
+  New comment.
+  """
   def new_comment do
     %Comment{}
     |> Comment.changeset()
