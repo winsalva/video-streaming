@@ -12,6 +12,7 @@ defmodule MyTube.Schema.Upload do
   schema "uploads" do
     belongs_to :user, MyTube.Schema.User
     has_many :comments, MyTube.Schema.Comment
+    field :category, :string
     field :title, :string
     field :file, :string
     field :description, :string
@@ -21,6 +22,7 @@ defmodule MyTube.Schema.Upload do
 
   @allowed_fields [
     :user_id,
+    :category,
     :title,
     :file,
     :description
@@ -34,7 +36,7 @@ defmodule MyTube.Schema.Upload do
     |> validate_required(@allowed_fields)
     |> validate_length(:title, max: 100)
     |> validate_length(:file, max: 100)
-    |> validate_length(:description, max: 250)
+    |> validate_length(:description, max: 1500)
     |> assoc_constraint(:user)
   end
 end

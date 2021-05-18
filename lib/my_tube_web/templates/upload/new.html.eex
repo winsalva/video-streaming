@@ -8,6 +8,11 @@
   <p class="alert-danger">Something went wrong. Please check errors below.</p>
 </div>
 <% end %>
+<%= select f, :category, [
+    "Sport": "Sport",
+    "Rugged": "Rugged"
+    ], prompt: "Category", class: "category" %>
+<%= error_tag f, :category %>
 
 <label>Title</label>
 <%= text_input f, :title, placeholder: "Add a video title... (required)" %>

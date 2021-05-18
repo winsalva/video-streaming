@@ -14,7 +14,7 @@ defmodule MyTubeWeb.UploadController do
 
 
 
-  def create(conn, %{"upload" => %{"title" => title, "file" => file, "description" => description} = params}) do
+  def create(conn, %{"upload" => %{"title" => title, "file" => file, "description" => description, "category" => category} = params}) do
     params = Map.put(params, "user_id", conn.assigns.current_user.id)
 
     case Upload.insert_upload(params) do

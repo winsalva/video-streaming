@@ -5,9 +5,8 @@
   
   <%= form_for @conn, Routes.search_path(@conn, :search), fn f -> %>
   <%= select f, :category, [
-      "Male": "male",
-      "Female": "female",
-      "Others": "others"
+      "Sport": "Sport",
+      "Rugged": "Rugged"
       ], prompt: "Category", class: "category" %>
 
 <div class="input-search-container">

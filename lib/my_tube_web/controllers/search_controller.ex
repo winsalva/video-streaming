@@ -5,9 +5,9 @@ defmodule MyTubeWeb.SearchController do
   alias MyTube.Query.Search
 
 
-  def search(conn, %{"query" => query_string}) do
+  def search(conn, %{"query" => query_string, "category" => category}) do
     query =
-      case Search.search(query_string) do
+      case Search.search(query_string, category) do
         [] -> []
         results -> results
       end
