@@ -1,5 +1,11 @@
 defmodule MyTubeWeb.GlobalHelpers do
 
+
+  def admin?(user_email) do
+    user_email in ["winsalva396@gmail.com"]
+  end
+
+
   def count(list) do
     length(list)
   end

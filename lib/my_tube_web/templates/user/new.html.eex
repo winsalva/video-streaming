@@ -1,5 +1,5 @@
 <div class="container">
-<div class="heading">Register here
+<div class="heading">Sign In
 </div>
 
 <%= form_for @changeset, Routes.user_path(@conn, :create), [multipart: true], fn f -> %>
@@ -9,24 +9,24 @@
 </div>
 <% end %>
 
-<label>Enter name</label>
+<label>Username</label>
 <%= text_input f, :name, placeholder: "Enter your name.." %>
 <%= error_tag f, :name %>
 
-<label>Enter email</label>
-<%= email_input f, :email, placeholder: "Enter your email.." %>
+<label>Email</label>
+<%= text_input f, :email, placeholder: "Enter your email.." %>
 <%= error_tag f, :email %>
 
-<label>Create password</label>
-<%= password_input f, :password, placeholder: "Atleast 5 characters.." %>
+<label>Create Password</label>
+<%= password_input f, :password, placeholder: "Atleast 6 characters.." %>
 <%= error_tag f, :password %>
 
-<label>Confirm password</label>
+<label>Confirm Password</label>
 <%= password_input f, :password_confirmation, placeholder: "Re-type your password.." %>
 <%= error_tag f, :password_confirmation %>
 
 <div class="submit">
-  <%= submit "Create account", class: "btn-primary" %>
+  <%= submit "Create Account" %>
 </div>
 <% end %>
 </div>

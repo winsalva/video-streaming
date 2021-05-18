@@ -3,12 +3,15 @@
 
 <div class="container">
   
-<%= form_for @conn, Routes.search_path(@conn, :search), fn f -> %>
+  <%= form_for @conn, Routes.search_path(@conn, :search), fn f -> %>
+  <%= select f, :category, [
+      "Male": "male",
+      "Female": "female",
+      "Others": "others"
+      ], prompt: "Category", class: "category" %>
 
-
-<%= search_input f, :query, placeholder: "Search for title.." %>
-
-<div class="submit">
+<div class="input-search-container">
+<%= search_input f, :query, placeholder: "Search for a product.." %>
   <%= submit "Search" %>
 </div>
 

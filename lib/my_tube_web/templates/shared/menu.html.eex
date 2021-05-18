@@ -2,7 +2,7 @@
   <div class="logo-container">
     <img class="logo" src="<%= Routes.static_path(@conn, "/images/myvideo-logo.jpg") %>"/>
   </div>
-  <div class="app-name">MyTube</div>
+  <div class="app-name">Company Name</div>
   <div class="nav-options">
     <a href="<%= Routes.search_path(@conn, :index) %>">
       <img class="icon-options" src="<%= Routes.static_path(@conn, "/images/search3.png") %>"/></a>
@@ -21,10 +21,8 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-    <%= if  user = @conn.assigns.current_user do %>
-    <%= if user.email == "winsalva396@gmail.com" do %>
+    <%= if  @conn.assigns.current_user && admin?(@conn.assigns.current_user.email) do %>
     <%= link "Admin Panel", to: "#", class: "a" %>
-    <% end %>
     <% end %>
     <%= link "Home", to: Routes.page_path(@conn, :index), class: "a" %>
     <%= if @conn.assigns.current_user do %>

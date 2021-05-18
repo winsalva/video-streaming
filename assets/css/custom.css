@@ -1,4 +1,23 @@
+.input-search-container {
+    display: flex;
+    margin-top: -1rem;
+}
+.category {
+    width: 150px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
 
+input[type="text"], input[type="search"] {
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+input[type="password"] {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: .05rem;
+}
 .heading {
     text-align: center;
     color: #ff7100;
@@ -248,8 +267,3 @@ p {
     color: #5bb;
 }
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-    iframe {
-	height: 40rem;
-    }
-}

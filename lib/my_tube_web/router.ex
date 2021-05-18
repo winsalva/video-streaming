@@ -75,4 +75,15 @@ defmodule MyTubeWeb.Router do
       live_dashboard "/dashboard", metrics: MyTubeWeb.Telemetry
     end
   end
+
+
+
+  ## CATCH ALL path ##
+
+  scope "/*path", MyTubeWeb do
+    pipe_through [:browser, :authenticate_user]
+
+    get "/", PageController, :index
+
+  end
 end

@@ -41,7 +41,7 @@ defmodule MyTube.Schema.User do
     user
     |> cast(attr, [:password])
     |> validate_required([:password])
-    |> validate_length(:password, min: 5, max: 20)
+    |> validate_length(:password, min: 6, max: 20)
     |> validate_confirmation(:password, required: true)
     |> hash_password()
     |> changeset(attr)

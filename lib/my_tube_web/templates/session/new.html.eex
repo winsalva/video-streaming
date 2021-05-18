@@ -1,5 +1,5 @@
 <div class="container">
-<div class="heading">Login here
+<div class="heading">Log In
 </div>
 
 <%= if get_flash(@conn, :error) do %>
@@ -10,14 +10,14 @@
 
 <%= form_for @conn, Routes.session_path(@conn, :create), fn f -> %>
 
-<label>Enter email</label>
-<%= email_input f, :email %>
+<label>Enter Email</label>
+<%= text_input f, :email, placeholder: "Enter your email.." %>
 
-<label>Enter password</label>
-<%= password_input f, :password %>
+<label>Enter Password</label>
+<%= password_input f, :password, placeholder: "Enter your password.." %>
 
 <div class="submit">
-<%= submit "Log in" %>
+<%= submit "Log In" %>
 </div>
 
 <% end %>
