@@ -1,5 +1,5 @@
 
-<%= render(MyTubeWeb.SharedView, "back-menu.html", conn: @conn, name: "Search MyTube") %>
+<%= render(MyTubeWeb.SharedView, "back-menu.html", conn: @conn, name: "Search My Videoplace") %>
 
 <div class="container">
   
