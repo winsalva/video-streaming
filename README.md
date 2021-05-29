@@ -1,4 +1,4 @@
-# MyTube
+# Video Streaming
 
 To start your Phoenix server:
 
